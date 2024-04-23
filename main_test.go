@@ -12,9 +12,9 @@ func TestFibonacci(t *testing.T) {
 		n        int   // Input value
 		expected []int // Expected result
 	}{
-		{0, []int{}},          // n = 0
-		{1, []int{0}},         // n = 1
-		{2, []int{0, 1}},      // n = 2
+		{0, []int{}},              // n = 0
+		{1, []int{0}},             // n = 1
+		{2, []int{0, 1}},          // n = 2
 		{5, []int{0, 1, 1, 2, 3}}, // n = 5
 	}
 
