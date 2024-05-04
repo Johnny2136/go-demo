@@ -1,11 +1,14 @@
 # go-demo
+
 ## Short Go Demo app
+
 In this modified version, the /fibonacci endpoint accepts a query parameter n, which specifies the number of Fibonacci numbers to generate. It then calculates the Fibonacci sequence up to the nth number and returns it as a response.
 
-### Building and running the App:
+### Building and running the App
 
-```podman build -t my-golang-api . ```
-```podman run -p 8080:8080 my-golang-api```
+* ```podman build -t my-golang-api .``` **(Or if using docker ```docker build -t my-golang-api .``` )**
+
+* ```podman run -p 8080:8080 my-golang-api``` **(Or if using docker ```docker run -p 8080:8080 my-golang-api``` )**
 
 ### Testing
 
@@ -27,10 +30,8 @@ This command will run all test functions in any files ending with _test.go in th
 
 #### Functional test
 
-To use this endpoint, you can make a GET request to http://localhost:8080/fibonacci?n=<value> where <value> is the number of Fibonacci numbers you want to generate.
+To use this endpoint, you can make a GET request to <http://localhost:8080/fibonacci?n=(#)> where "n" is the number of Fibonacci numbers you want to generate.
 
-For example, a request to ```http://localhost:8080/fibonacci?n=10``` would return the Fibonacci sequence up to the 10th number.(http://localhost:8080/fibonacci?n=10)
+For example, a request to ```http://localhost:8080/fibonacci?n=10``` would return the Fibonacci sequence up to the 10th number.(<http://localhost:8080/fibonacci?n=10>)
 
 This should yeild ```Fibonacci sequence up to 10: [0 1 1 2 3 5 8 13 21 34]``` in the browser.
-
-
