@@ -5,7 +5,8 @@ import (
 	"net/http"
 	"strconv"
 )
-//API interface that gets the value that will be passed to the Func fibonacci
+
+// API interface that gets the value that will be passed to the Func fibonacci
 func fibonacciHandler(w http.ResponseWriter, r *http.Request) {
 	// Get the value of the 'n' query parameter
 	nStr := r.URL.Query().Get("n")
@@ -18,10 +19,14 @@ func fibonacciHandler(w http.ResponseWriter, r *http.Request) {
 	// Calculate the Fibonacci sequence up to the nth number
 	result := fibonacci(n)
 
+	// Set Content-Type without charset=utf-8
+	w.Header().Set("Content-Type", "text/plain")
+
 	// Write the Fibonacci sequence as a response
 	fmt.Fprintf(w, "Fibonacci sequence up to %d: %v", n, result)
 }
-//Func fibonacci generates a fibonacci sequence based on "fibonacci(n)" passed from the handler
+
+// Func fibonacci generates a fibonacci sequence based on "fibonacci(n)" passed from the handler
 func fibonacci(n int) []int {
 	sequence := make([]int, n)
 	if n > 0 {
