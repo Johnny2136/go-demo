@@ -1,5 +1,5 @@
 # Use the official Golang image from Docker Hub
-FROM golang:1.17-alpine AS builder
+FROM golang:3.21-alpine AS builder
 
 # Set the Current Working Directory inside the container
 WORKDIR /app
